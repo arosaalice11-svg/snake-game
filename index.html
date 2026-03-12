@@ -37,13 +37,21 @@
 
               .pontuacao {
                  font-weight: bold;
-                 color:black:
+                 color:black;
               }
                 .record{ 
                     font-weight: bold;
-                    color:black:
+                    color:black;
                 }
-             
+
+                #canvas{
+                    border: 3px solid #eb0b95;
+                    border-radius: 10px;
+                    background-color: black;
+                    display: block;
+
+                    margin: 20px auto;
+                }
         </style>
         </head>
         <body> 
@@ -53,16 +61,19 @@
                 <div class="info">
 
                     <div class="pontuacao">
-                            Pontuação: 0;
+                            Pontuação: <span id="pontos">0</span>
                     </div>
                     <div class="record">
-                       record:0
+                       recorde:<span id="recorde">0</span>
                     </div>
 
 
                 
                 </div>
+                
+                <canvas id="canvas" width="400" height="400">
 
+                </canvas>
             </div>
             <h3>Em breve teremos novidadess!</h3>
         </body>
