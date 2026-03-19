@@ -70,28 +70,31 @@
         <body> 
             <div class="container">
                 <h1>&#128013; Jogo da cobrinha</h1>
-                
-                <div class="info">
 
+                <div class="info">
                     <div class="pontuacao">
                             Pontuação: <span id="pontos">0</span>
                     </div>
                     <div class="record">
-                       recorde:<span id="recorde">0</span>
+                            Recorde:<span id="recorde">0</span>
                     </div>
-
-
-                
                 </div>
                 
-                <canvas id="canvas" width="400" height="400">
-
+                 <canvas id="canvas" widht="400" height="400">
+                    <!--
+                    <canvas>: é um elemento especial para desenho 2D ou 3D. Por si só, 
+                    é apenas um retângulo vazio. O JavasScript vai usar o "contexto 2D"
+                    para desenhar a cobra, e comida, etc   
+                    -->
                 </canvas>
 
-                <div>
+                <div  class="controles">
+                    <button onclick="alert('Em construção')">Iniciar Jogo</button>
+                    <button>Pausar / Continuar</button>
                 </div>
+           
             </div>
-            <h3>Em breve teremos novidadess!</h3>
+           
         </body>
    
 </html>
