@@ -152,6 +152,13 @@
 				recorde = localStorage.getItem('recordeCobrinha') || 156888;
 				document.getElementById('recorde').textContent = recorde;
 
+				function iniciarJogo (){
+					cobra = [
+				         { x: 10, y:10},
+						 { x: 9, y: 10},
+						 { x: 8, y: 10},
+					];
+				}
 
 			
 				
@@ -161,12 +168,6 @@
                     console.log(novaDirecao)
                 
                 }
-
-                
-				function init()
-				{
-					console.log("Jogo começou");
-				}
 
 				function pause()
 				{
