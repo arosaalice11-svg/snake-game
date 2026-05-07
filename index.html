@@ -165,6 +165,13 @@
 					 jogoPausado = false;
 
 					 document.getElementById('pontos').textContent = pontos;
+
+					 intervaloJogo = setInterval(atualizarJogo, 100);
+				}
+
+				function atualizarJogo()
+				{
+					console.log('atualizado');
 				}
 
 				function gerarComida(){
