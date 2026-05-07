@@ -158,20 +158,24 @@
 						 { x: 9, y: 10},
 						 { x: 8, y: 10},
 					];
-					 direcao = 'direita';
-					 proximaDirecao = 'direita';
-					 pontos = 0;
-					 jogoAtivo = true;
-					 jogoPausado = false;
+					direcao = 'direita';
+					proximaDirecao = 'direita';
+					pontos = 0;
+					jogoAtivo = true;
+					jogoPausado = false;
 
-					 document.getElementById('pontos').textContent = pontos;
+					document.getElementById('pontos').textContent = pontos;
 
-					 intervaloJogo = setInterval(atualizarJogo, 100);
+					if(intervaloJogo){
+						clearInterval(intervaloJogo);
+					}
+
+					intervaloJogo = setInterval(atualizarJogo, 100);
 				}
 
 				function atualizarJogo()
 				{
-					console.log('atualizado');
+					
 				}
 
 				function gerarComida(){
