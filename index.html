@@ -211,8 +211,17 @@
 
 					}
 
-					cobra.forEach( (pedaco, indice) => { console.log("pedaco da cobra " +indice); });
-					
+					cobra.forEach( (pedaco, indice) => { 
+						ctx.fillStyle = '#000000FF';
+						ctx.fillRect(
+							pedaco.x * tamanhoQuadrado + 1,
+							pedaco.y * tamanhoQuadrado + 1,
+							tamanhoQuadrado -2,
+							tamanhoQuadrado -2
+						) 
+					});
+
+
 					ctx.fill();
 
 				}
