@@ -247,7 +247,7 @@
                 }
 
                 //executa a função atualizarJogo a cada 100 milisegundos
-                intervaloJogo = setInterval(atualizarJogo, 200);
+                intervaloJogo = setInterval(atualizarJogo, 230);
             }
 
 
@@ -437,12 +437,18 @@
             }
             
             function pausarJogo(){
-              alert('goiano');
+              pausarJogo = !pausarJogo;
+
+              if (pausarJogo === true) {
+                clearInterval(intervaloJogo);
+              }else{
+                intervaloJogo = setInterval(atualizarJogo, 500);
+              }
             }
 
             document.addEventListener('keydown', function(event){
                 event.preventDefault();
-                
+
                 if(event.key === 'ArrowDown'){
                   mudarDirecao('baixo');
                 }else if(event.key === 'ArrowUp'){
