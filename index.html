@@ -441,7 +441,17 @@
             }
 
             document.addEventListener('keydown', function(event){
-                alert(event.key);
+                event.preventDefault();
+                
+                if(event.key === 'ArrowDown'){
+                  mudarDirecao('baixo');
+                }else if(event.key === 'ArrowUp'){
+                  mudarDirecao('cima');
+                }else if(event.key === 'ArrowLeft'){
+                  mudarDirecao('esquerda');
+                } else if(event.key === 'ArrowRight'){
+                  mudarDirecao('direita');
+                }
             });
 
         </script>
