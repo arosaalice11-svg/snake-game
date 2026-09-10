@@ -247,7 +247,7 @@
                 }
 
                 //executa a função atualizarJogo a cada 100 milisegundos
-                intervaloJogo = setInterval(atualizarJogo, 230);
+                intervaloJogo = setInterval(atualizarJogo, 700);
             }
 
 
@@ -300,6 +300,8 @@
                cobra.pop();
                desenhar();                
             }
+            
+            
             //============================
             // FIM DE JOGO
             //============================
@@ -393,7 +395,7 @@
             }
 
             //=============================
-            //====FUNÇÃO PARA GERAR COMIDA
+            //==== GERAR COMIDA
             //=============================
             function gerarComida(){
                 let posicaoValida = false;
@@ -417,6 +419,9 @@
                 }
             }
 
+            //============================
+            //=====  MUDA A DIREÇÃO DA COBRA - CIMA, BAIXO, ESQUE, DIREI
+            //=============================
             function mudarDirecao(novaDirecao){
               
                 if(novaDirecao === 'cima'    &&  direcao !== 'baixo'){
@@ -436,29 +441,46 @@
                 }
             }
             
-            function pausarJogo(){
-              pausarJogo = !pausarJogo;
 
-              if (pausarJogo === true) {
-                clearInterval(intervaloJogo);
-              }else{
-                intervaloJogo = setInterval(atualizarJogo, 500);
-              }
+            //============================
+            //==== PAUSAR O JOGO
+            //============================
+            function pausarJogo(){
+                if(!jogoAtivo){
+                    return;
+                }
+
+                pausarJogo = !pausarJogo;
+
+                if(pausarJogo){
+                    clearInterval(intervaloJogo);
+                }else{
+                    intervaloJogo = setInterval(atualizarJogo, 500);
+                }
             }
 
-            document.addEventListener('keydown', function(event){
-                event.preventDefault();
-
+            //===========================
+            //==== CONTROLE DE TECLADO
+            //===========================
+           document.addEventListener('keydown', function(event){
                 if(event.key === 'ArrowDown'){
-                  mudarDirecao('baixo');
+                    event.preventDefault();
+                    mudarDirecao('baixo');
                 }else if(event.key === 'ArrowUp'){
-                  mudarDirecao('cima');
+                    event.preventDefault();
+                    mudarDirecao('cima');
                 }else if(event.key === 'ArrowLeft'){
-                  mudarDirecao('esquerda');
-                } else if(event.key === 'ArrowRight'){
-                  mudarDirecao('direita');
+                    event.preventDefault();
+                    mudarDirecao('esquerda');
+                }else if(event.key === 'ArrowRight'){
+                    event.preventDefault();
+                    mudarDirecao('direita');
+                }else if(event.key === ' '){
+                    event.preventDefault();
+                    pausarJogo();
                 }
-            });
+           });
+
 
         </script>
 
